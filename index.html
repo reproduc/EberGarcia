@@ -144,7 +144,182 @@ html,body{font-family:"Open Sans",sans-serif;height:100%;margin:0;display:flex;f
 
   
 </head>
+<body>
+    <div class="background-image"></div>
+    <video src="imagenes/background.png" autoplay muted loop></video>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td valign="top">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td width="50%">&nbsp;</td>
+                        <td width="50%" align="right">
+                            <div id="mySidebar" class="sidebar">
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td><img src="imagenes/menu.png" class="pulse-logo" width="100%" height="auto"></td>
+                                    </tr>
+                                 
+                                    <tr>
+                                        
+                                        <td>
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="10">
+                                                <tr>
+                                                    <td><a href="javascript:void(0);" onclick="closeNav();"><img src="imagenes/inicio.png" width="100%" height="auto" border="0"></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="+18317564767" target="_blank"><img src="imagenes/llamanos.png" width="100%" height="auto" border="0"></a></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><hr></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="10">
+                                                <tr>
+                                                    <td><a href="https://moneeradio.blogspot.com" target="_blank"><img src="imagenes/web.png" width="100%" height="auto" border="0"></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="https://moneeradio.blogspot.com" target="_blank"><img src="imagenes/instagram.png" width="100%" height="auto" border="0"></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="https://www.instagram.com" target="_blank"><img src="imagenes/tiktok.png" width="100%" height="auto" border="0"></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="https://moneeradio.blogspot.com" target="_blank"><img src="imagenes/Youtube.png" width="100%" height="auto" border="0"></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="https://www.messenger.com" target="_blank"><img src="imagenes/messenger.png" width="100%" height="auto" border="0"></a></td>
+                                                </tr>
+                                                <tr></tr>
+                                                    <td><a href="xxx" target="_blank"><img src="imagenes/email.png" width="100%" height="auto" border="0"></a></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><hr></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="10">
+                                                <tr>
+                                                    <td>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://moneeradioapp.pages.dev/" target="_blank">
+                                                            <img src="imagenes/compartirfacebook.png" class="pulse" width="100%" height="auto">
+                                                        </a>                                                         
+                                                        <a href="https://api.whatsapp.com/send?text=¡Hola! Te Invito a escuchar nuestra Emisora https://moneeradioapp.pages.dev/"_blank">
+                                                            <img src="imagenes/compartirwhatsapp.png" class="pulse" width="100%" height="auto">
+                                                        </a>                                                                                                              
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
 
+                            <div id="main">
+                                <button class="openbtn" onClick="toggleNav()">
+                                    <img src="menu.png" alt="Menu" class="menu-icon">
+                                </button>                            
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td height="470" valign="top">
+              <div id="installButtonWrapper">
+                <img src="instalar.png" id="installButton" alt="Instalar App" />
+            </div>         
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <script src="js/lunaradio.min.js"></script>
+                <div id="lunaradio" style="width: 100%; height: 76vh;"></div>
+            </td>
+        </tr>
+    </table>
+
+    <div class="social-icons">
+        <a href="https://wa.me/+18317564767" target="_blank">
+            <img src="iconos/whatsapp.png" class="social-icon" alt="WhatsApp">
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="iconos/facebook.png" class="social-icon" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="iconos/tiktok.png" class="social-icon" alt="Instagram">
+            </a>
+   
+        <a href="#" id="chatIcon">
+            <img src="iconos/chat.png" class="social-icon" alt="Chat">
+        </a>
+    </div>  
+
+    <div id="chatModal" class="chat-modal">
+        <span class="close" id="closeChat">&times;</span>
+        <iframe src="https://www.dailymotion.com/embed/video/x7x4dgx?autoplay=1" frameborder="0"></iframe>
+    </div>
+
+    <script>
+        let deferredPrompt;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installButtonWrapper').style.display = 'block'; // Muestra el botón
+        });
+
+        document.getElementById('installButton').addEventListener('click', () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('Usuario aceptó la instalación');
+                    } else {
+                        console.log('Usuario rechazó la instalación');
+                    }
+                });
+                deferredPrompt = null; // Resetea el prompt
+                document.getElementById('installButtonWrapper').style.display = 'none'; // Oculta el botón
+            }
+        });
+
+        // Lógica para abrir y cerrar el menú
+        function toggleNav() {
+            const sidebar = document.getElementById("mySidebar");
+            const main = document.getElementById("main");
+            
+            if (sidebar.style.width === "250px") {
+                closeNav();
+            } else {
+                openNav();
+            }
+        }
+
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+
+        // Cerrar el menú al hacer clic fuera de él
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById("mySidebar");
+            const button = document.querySelector('.openbtn');
+
+           if (sidebar.style.width === "250px" && !sidebar.contains(event.target) && !button.contains(event.target)) {
+                closeNav();
+            }
+        });
 
 <div id="player"></div>
 <script>
