@@ -13,6 +13,136 @@
 <style>
 html,body{font-family:"Open Sans",sans-serif;height:100%;margin:0;display:flex;flex-direction:column;color:#272829;}
 </style>
+<!-- Link to the manifest file -->
+    <link rel="manifest" href="manifest.json">
+
+    <style>
+        /* Estilo para el video */
+        video {
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            z-index: -1; 
+        }
+
+        /* Estilo para la imagen de fondo */
+        .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('imagenes/background.png');
+    background-size: cover;
+
+    z-index: -1;
+    filter: blur(9px);
+    animation: zoomInOut 7s infinite alternate ease-in-out;
+}
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+        /* Asegura que el body y html ocupen el 100% */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: auto; 
+        }
+
+        /* Estilos para el botón de instalación */
+        #installButtonWrapper {
+            position: relative; 
+            top: 0; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            z-index: 10; 
+        }
+
+        #installButton {
+            width: 190px; 
+            cursor: pointer; 
+            transition: transform 0.2s; 
+        }
+
+        #installButton:hover {
+            transform: scale(1.1); 
+        }
+
+        /* Estilos para los iconos de redes sociales */
+        .social-icons {
+            position: absolute;
+            right: 20px; 
+            top: 50%; 
+            transform: translateY(-50%); 
+            display: flex;
+            flex-direction: column; 
+            gap: 10px; 
+        }
+
+        .social-icon {
+            width: 40px; 
+            height: 40px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+        }
+
+        /* Estilo para el modal del chat */
+        .chat-modal {
+            display: none; 
+            position: fixed;
+            top: 0; 
+            left: 0; 
+            width: 100vw; 
+            height: 100vh; 
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.5s ease;
+            transform: translateY(100%); 
+            z-index: 999;
+        }
+
+        .chat-modal.show {
+            display: block;
+            transform: translateY(0); 
+        }
+
+        .chat-modal iframe {
+            width: 100%; 
+            height: 100%; 
+            border: none;
+        }
+
+        .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 500px;
+    background: #00000070;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1000;
+}
+    </style>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Monee Radio" />
+    <meta property="og:description" content="Monee Radio Recordando Nuestra musica La Autentica Rock & Pop 70-80-90 Desde Trujillo Perú." />
+    <meta property="og:image" content="imagenes/logo.png" />
+    <meta property="og:url" content="https://moneeradio.blogspot.com" />
+    <meta property="og:type" content="website" />
+
+  
 </head>
 
 
